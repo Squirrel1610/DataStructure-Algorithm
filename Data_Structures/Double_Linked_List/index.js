@@ -153,6 +153,43 @@ class DLL {
         this.length--;
         return removedNode;
     }
+
+    print() {
+        var arr = [];
+        var current = this?.head;
+        for(var i = 0; i < this.length; i++) {
+            arr.push(current.val);
+            current = current.next;
+        }
+
+        console.log(arr);
+    } 
+
+    reverse() {
+        if(!this.head) return this;
+
+        //swap head and tail
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        let counter = 0;
+        let prev = null;
+        let next;
+
+        while(counter < this.length) {
+            next = node.next;
+            node.prev = next;
+            node.next = prev;
+
+            prev = node;
+            node = next;
+
+            counter++; 
+        }
+
+        return this;
+    }
 }
 
 var list = new DLL();
@@ -163,5 +200,7 @@ list.push(4);
 // console.log(list.unshift(0));
 // console.log(list.set(0,3));
 // list.insert(1,0);
-console.log(list.remove(1));
-console.log(list);
+// console.log(list.remove(1));
+// console.log(list);
+list.reverse();
+list.print();
