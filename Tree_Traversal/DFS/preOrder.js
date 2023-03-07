@@ -13,6 +13,7 @@ class BinaryTree {
 }
 
 //DFS: depth first search (preOrder)
+//uses to export tree structure
 function dfs_preOrder(binaryTree) {
     var visited = [];
     var current = binaryTree.root;

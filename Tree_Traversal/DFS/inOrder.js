@@ -13,6 +13,7 @@ class BinaryTree {
 }
 
 //DFS: depth first search (inOrder)
+//uses commonly with binary search tree
 function dfs_inOrder(binaryTree) {
     var visited = [];
     var current = binaryTree.root;
